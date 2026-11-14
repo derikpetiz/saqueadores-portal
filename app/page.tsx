@@ -3,33 +3,29 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 relative overflow-hidden selection:bg-cyan-500 selection:text-black font-sans">
+    <div className="relative overflow-hidden">
       
-      {/* Background Glows & Grid Atmospheres */}
+      {/* Background Atmospheres & Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-cyan-500/10 via-blue-500/5 to-transparent blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b10_1px,transparent_1px),linear-gradient(to_bottom,#1e293b10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-6 max-w-7xl mx-auto text-center">
         
-        {/* Status Badge */}
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-8 uppercase tracking-widest shadow-[0_0_20px_rgba(6,182,212,0.15)] backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping absolute" />
           <span className="w-2 h-2 rounded-full bg-cyan-400 relative" />
           Setor Euclid • Rede de Frotas Ativa
         </div>
 
-        {/* Main Title */}
-        <h1 className="text-5xl md:text-8xl font-black tracking-tight uppercase mb-8 bg-gradient-to-b from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
+        <h1 className="text-5xl md:text-8xl font-black tracking-tight uppercase mb-8 bg-gradient-to-b from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">
           Aliança Saqueadores
         </h1>
         
-        {/* Subtitle */}
         <p className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl font-light mb-12 leading-relaxed">
           O sindicato soberano em No Man's Sky. Engenharia de bases na <span className="text-cyan-400 font-medium">"Terra"</span>, comércio restrito e supremacia tática absoluta.
         </p>
 
-        {/* CTA Actions */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link href="/dashboard" className="w-full sm:w-auto px-8 py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold uppercase tracking-widest text-xs transition-all duration-300 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] transform hover:-translate-y-0.5">
             Entrar no Painel Tático
@@ -102,11 +98,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-900 bg-[#020408] py-10 text-center text-xs text-slate-500 font-mono">
-        ALIANÇA SAQUEADORES • SECURE GRID V2.5 • NO MAN'S SKY ELITE HUB
-      </footer>
     </div>
   );
 }

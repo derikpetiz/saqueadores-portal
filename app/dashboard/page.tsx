@@ -15,7 +15,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 p-6 md:p-12 font-sans">
+    <div className="min-h-screen py-10 px-6 md:px-12 font-sans">
       <div className="max-w-6xl mx-auto space-y-8">
         
         {/* Header do Operador */}
