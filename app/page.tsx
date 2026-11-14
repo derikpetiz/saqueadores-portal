@@ -1,7 +1,3 @@
-'use client';
-
-import Link from 'next/link';
-
 export default function LandingPage() {
   return (
     <main style={{
@@ -9,7 +5,9 @@ export default function LandingPage() {
       background: 'radial-gradient(circle at 50% 10%, #091326 0%, #030712 60%, #010308 100%)',
       color: '#f8fafc',
       fontFamily: 'system-ui, -apple-system, sans-serif',
-      overflowX: 'hidden'
+      overflowX: 'hidden',
+      margin: 0,
+      padding: 0
     }}>
       {/* Barra de Navegação Superior */}
       <nav style={{
@@ -33,12 +31,12 @@ export default function LandingPage() {
           </span>
         </div>
         <div style={{ display: 'flex', gap: '16px' }}>
-          <Link href="/dashboard" style={{ color: '#94a3b8', textDecoration: 'none', padding: '8px 16px', fontWeight: '500', fontSize: '0.95rem' }}>
+          <a href="/dashboard" style={{ color: '#94a3b8', textDecoration: 'none', padding: '8px 16px', fontWeight: '500', fontSize: '0.95rem' }}>
             Entrar
-          </Link>
-          <Link href="/dashboard" style={{ background: '#00e5ff', color: '#030712', textDecoration: 'none', padding: '8px 20px', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.95rem', boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)' }}>
+          </a>
+          <a href="/dashboard" style={{ background: '#00e5ff', color: '#030712', textDecoration: 'none', padding: '8px 20px', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.95rem', boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)' }}>
             Juntar-se à Aliança
-          </Link>
+          </a>
         </div>
       </nav>
 
@@ -90,10 +88,10 @@ export default function LandingPage() {
           Coordenadas de bases, controlo de frotas, economia e o quartel-general exclusivo para os viajantes mais temidos de No Man's Sky.
         </p>
 
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'center', justifyContent: 'center' }}>
-          <Link href="/dashboard" style={{ background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)', color: '#030712', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem', boxShadow: '0 0 25px rgba(0, 229, 255, 0.4)' }}>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <a href="/dashboard" style={{ background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)', color: '#030712', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem', boxShadow: '0 0 25px rgba(0, 229, 255, 0.4)' }}>
             Aceder ao Quartel-General
-          </Link>
+          </a>
           <a href="#recursos" style={{ background: 'rgba(255, 255, 255, 0.05)', color: '#fff', border: '1px solid rgba(255, 255, 255, 0.15)', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: '500', fontSize: '1rem' }}>
             Explorar Recursos
           </a>
@@ -106,7 +104,7 @@ export default function LandingPage() {
           Tecnologia & Operações da Aliança
         </h2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
           {[
             { title: 'Base de Dados de Portais', desc: 'Registo e partilha de glifos, coordenadas exatas de planetas ricos e sistemas exóticos.' },
             { title: 'Gestão de Frotas', desc: 'Organização de missões de fragatas, expedições conjuntas e defesa de territórios.' },
@@ -117,8 +115,7 @@ export default function LandingPage() {
               border: '1px solid rgba(56, 189, 248, 0.15)',
               padding: '32px',
               borderRadius: '12px',
-              backdropFilter: 'blur(10px)',
-              transition: 'transform 0.2s'
+              backdropFilter: 'blur(10px)'
             }}>
               <h3 style={{ fontSize: '1.25rem', color: '#00e5ff', marginBottom: '12px' }}>{item.title}</h3>
               <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: '1.5' }}>{item.desc}</p>
