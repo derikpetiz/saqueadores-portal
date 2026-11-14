@@ -1,174 +1,143 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 
-export default function PortalHome() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isRegistering, setIsRegistering] = useState(false);
-
-  const handleAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(isRegistering ? 'Registo efetuado com sucesso na rede!' : 'Conexão estabelecida com sucesso!');
-  };
-
+export default function LandingPage() {
   return (
     <main style={{
       minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: 'radial-gradient(circle at 50% 20%, #0c192c 0%, #050b14 70%, #020408 100%)',
-      color: '#e2e8f0',
+      background: 'radial-gradient(circle at 50% 10%, #091326 0%, #030712 60%, #010308 100%)',
+      color: '#f8fafc',
       fontFamily: 'system-ui, -apple-system, sans-serif',
-      position: 'relative',
-      overflow: 'hidden',
-      padding: '20px'
+      overflowX: 'hidden'
     }}>
-      {/* Grelha de fundo de alta tecnologia */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        backgroundImage: 'linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px)',
-        backgroundSize: '40px 40px',
-        pointerEvents: 'none'
-      }} />
-
-      {/* Cartão principal com efeito Glassmorphism */}
-      <div style={{
-        position: 'relative',
-        background: 'rgba(11, 19, 38, 0.85)',
-        backdropFilter: 'blur(16px)',
-        border: '1px solid rgba(0, 229, 255, 0.25)',
-        borderRadius: '16px',
-        boxShadow: '0 0 50px rgba(0, 229, 255, 0.12), inset 0 0 20px rgba(0, 229, 255, 0.05)',
-        padding: '48px 40px',
-        width: '100%',
-        maxWidth: '440px',
-        textAlign: 'center'
+      {/* Barra de Navegação Superior */}
+      <nav style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '24px 48px',
+        borderBottom: '1px solid rgba(56, 189, 248, 0.1)',
+        backdropFilter: 'blur(10px)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 100,
+        background: 'rgba(3, 7, 18, 0.8)'
       }}>
-        {/* Etiqueta de sistema */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <span style={{ fontSize: '1.2rem', fontWeight: '900', letterSpacing: '2px', color: '#00e5ff' }}>
+            ⚡ SAQUEADORES
+          </span>
+          <span style={{ fontSize: '0.75rem', background: 'rgba(0, 229, 255, 0.1)', color: '#00e5ff', padding: '2px 8px', borderRadius: '4px', border: '1px solid rgba(0, 229, 255, 0.2)' }}>
+            NMS ALIANÇA
+          </span>
+        </div>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <Link href="/dashboard" style={{ color: '#94a3b8', textDecoration: 'none', padding: '8px 16px', fontWeight: '500', fontSize: '0.95rem' }}>
+            Entrar
+          </Link>
+          <Link href="/dashboard" style={{ background: '#00e5ff', color: '#030712', textDecoration: 'none', padding: '8px 20px', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.95rem', boxShadow: '0 0 15px rgba(0, 229, 255, 0.3)' }}>
+            Juntar-se à Aliança
+          </Link>
+        </div>
+      </nav>
+
+      {/* Seção Hero (Principal) */}
+      <section style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: '100px 20px 80px 20px',
+        maxWidth: '900px',
+        margin: '0 auto'
+      }}>
         <div style={{
           display: 'inline-block',
-          background: 'rgba(0, 229, 255, 0.1)',
-          border: '1px solid rgba(0, 229, 255, 0.3)',
-          color: '#00e5ff',
-          padding: '4px 12px',
-          borderRadius: '20px',
-          fontSize: '0.75rem',
+          background: 'rgba(56, 189, 248, 0.1)',
+          border: '1px solid rgba(56, 189, 248, 0.3)',
+          color: '#38bdf8',
+          padding: '6px 16px',
+          borderRadius: '30px',
+          fontSize: '0.8rem',
           fontWeight: 'bold',
           letterSpacing: '2px',
-          marginBottom: '16px',
+          marginBottom: '24px',
           textTransform: 'uppercase'
         }}>
-          NMS // Terminal de Comando
+          Exploração • Comércio • Domínio Galáctico
         </div>
 
         <h1 style={{
-          fontSize: '2rem',
-          fontWeight: '800',
-          color: '#ffffff',
-          marginBottom: '8px',
-          letterSpacing: '0.5px'
+          fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+          fontWeight: '900',
+          lineHeight: '1.1',
+          marginBottom: '24px',
+          background: 'linear-gradient(to right, #ffffff, #94a3b8)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
         }}>
-          SAQUEADORES
+          O Portal Definitivo da Aliança Saqueadores
         </h1>
-        
+
         <p style={{
+          fontSize: '1.15rem',
           color: '#94a3b8',
-          fontSize: '0.9rem',
-          marginBottom: '32px'
+          maxWidth: '650px',
+          marginBottom: '40px',
+          lineHeight: '1.6'
         }}>
-          {isRegistering ? 'Registe a sua identidade na rede galáctica' : 'Aceda ao portal restrito da aliança'}
+          Coordenadas de bases, controlo de frotas, economia e o quartel-general exclusivo para os viajantes mais temidos de No Man's Sky.
         </p>
 
-        <form onSubmit={handleAuth} style={{ display: 'flex', flexDirection: 'column', gap: '20px', textAlign: 'left' }}>
-          <div>
-            <label style={{ display: 'block', fontSize: '0.75rem', color: '#38bdf8', marginBottom: '8px', fontWeight: 'bold', letterSpacing: '1px' }}>
-              FREQUÊNCIA DE E-MAIL
-            </label>
-            <input 
-              type="email" 
-              placeholder="comandante@atlas.com" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '14px 16px',
-                background: 'rgba(2, 6, 23, 0.8)',
-                border: '1px solid rgba(56, 189, 248, 0.3)',
-                borderRadius: '8px',
-                color: '#fff',
-                outline: 'none',
-                fontSize: '0.95rem',
-                boxSizing: 'border-box'
-              }}
-              required 
-            />
-          </div>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'center', justifyContent: 'center' }}>
+          <Link href="/dashboard" style={{ background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)', color: '#030712', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1rem', boxShadow: '0 0 25px rgba(0, 229, 255, 0.4)' }}>
+            Aceder ao Quartel-General
+          </Link>
+          <a href="#recursos" style={{ background: 'rgba(255, 255, 255, 0.05)', color: '#fff', border: '1px solid rgba(255, 255, 255, 0.15)', padding: '14px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: '500', fontSize: '1rem' }}>
+            Explorar Recursos
+          </a>
+        </div>
+      </section>
 
-          <div>
-            <label style={{ display: 'block', fontSize: '0.75rem', color: '#38bdf8', marginBottom: '8px', fontWeight: 'bold', letterSpacing: '1px' }}>
-              CÓDIGO DE ACESSO (SENHA)
-            </label>
-            <input 
-              type="password" 
-              placeholder="••••••••" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '14px 16px',
-                background: 'rgba(2, 6, 23, 0.8)',
-                border: '1px solid rgba(56, 189, 248, 0.3)',
-                borderRadius: '8px',
-                color: '#fff',
-                outline: 'none',
-                fontSize: '0.95rem',
-                boxSizing: 'border-box'
-              }}
-              required 
-            />
-          </div>
+      {/* Seção de Recursos / Módulos */}
+      <section id="recursos" style={{ padding: '80px 20px', maxWidth: '1100px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '48px', fontWeight: '800' }}>
+          Tecnologia & Operações da Aliança
+        </h2>
 
-          <button 
-            type="submit" 
-            style={{
-              width: '100%',
-              padding: '14px',
-              background: 'linear-gradient(135deg, #00e5ff 0%, #0284c7 100%)',
-              color: '#050b14',
-              fontWeight: 'bold',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              marginTop: '8px',
-              fontSize: '1rem',
-              letterSpacing: '1px',
-              boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            {isRegistering ? 'INICIALIZAR REGISTO' : 'ESTABELECER CONEXÃO'}
-          </button>
-        </form>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          {[
+            { title: 'Base de Dados de Portais', desc: 'Registo e partilha de glifos, coordenadas exatas de planetas ricos e sistemas exóticos.' },
+            { title: 'Gestão de Frotas', desc: 'Organização de missões de fragatas, expedições conjuntas e defesa de territórios.' },
+            { title: 'Comércio & Recursos', desc: 'Rotas comerciais otimizadas e abastecimento centralizado para os membros da aliança.' }
+          ].map((item, index) => (
+            <div key={index} style={{
+              background: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(56, 189, 248, 0.15)',
+              padding: '32px',
+              borderRadius: '12px',
+              backdropFilter: 'blur(10px)',
+              transition: 'transform 0.2s'
+            }}>
+              <h3 style={{ fontSize: '1.25rem', color: '#00e5ff', marginBottom: '12px' }}>{item.title}</h3>
+              <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: '1.5' }}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <button 
-          type="button"
-          onClick={() => setIsRegistering(!isRegistering)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#94a3b8',
-            cursor: 'pointer',
-            marginTop: '24px',
-            fontSize: '0.85rem'
-          }}
-        >
-          {isRegistering ? 'Já possui credenciais? Faça login' : 'Novo viajante? Registe-se na aliança'}
-        </button>
-      </div>
+      {/* Rodapé */}
+      <footer style={{
+        textAlign: 'center',
+        padding: '40px',
+        borderTop: '1px solid rgba(56, 189, 248, 0.1)',
+        color: '#64748b',
+        fontSize: '0.9rem',
+        marginTop: '80px'
+      }}>
+        <p>© 2026 Aliança Saqueadores • No Man's Sky Community Portal. Todos os direitos reservados.</p>
+      </footer>
     </main>
   );
 }
