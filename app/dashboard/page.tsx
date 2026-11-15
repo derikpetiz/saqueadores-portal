@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '../lib/supabase-browser';
+import AtlasTab from './atlas-tab';
 
 const DISCORD = 'https://discord.gg/XTRw3hRfe';
 
@@ -166,12 +167,7 @@ export default function DashboardPage() {
           </>
         )}
 
-        {tab === 'atlas' && (
-          <div className="rounded-md border border-dashed border-line bg-panel p-8">
-            <h2 className="mb-2 font-display text-3xl font-black">Atlas em construção</h2>
-            <p className="text-mute">Aqui ficarão as descobertas da aliança, com glifos, tipo de planeta e autor.</p>
-          </div>
-        )}
+        {tab === 'atlas' && <AtlasTab userId={profile.id} isLeader={!!profile.is_leader} />}
 
         {tab === 'lideranca' && profile.is_leader && (
           <div>
