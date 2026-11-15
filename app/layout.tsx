@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Big_Shoulders_Display, Public_Sans } from 'next/font/google';
+import { Barlow_Condensed, Public_Sans } from 'next/font/google';
 import './globals.css';
 
-const display = Big_Shoulders_Display({
+const display = Barlow_Condensed({
   subsets: ['latin'],
   weight: ['700', '900'],
   variable: '--next-display',
