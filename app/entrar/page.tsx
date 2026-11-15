@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
 import { createClient } from '../lib/supabase-browser';
 
@@ -58,8 +59,19 @@ export default function EntrarPage() {
           </>
         ) : (
           <>
-            <p className="mt-4 mb-6 text-mute">
+            <p className="mt-4 mb-3 text-mute">
               Use a sua conta do Discord para acessar o portal da aliança.
+            </p>
+            <p className="mb-6 text-sm text-mute">
+              Ao entrar, você concorda com as{' '}
+              <Link href="/regras" className="underline">
+                Regras
+              </Link>{' '}
+              e a{' '}
+              <Link href="/privacidade" className="underline">
+                Política de Privacidade
+              </Link>
+              .
             </p>
             {failed && (
               <p className="mb-4 text-sm text-red-400">

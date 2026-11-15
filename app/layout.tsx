@@ -70,9 +70,19 @@ export default function RootLayout({
         <main>{children}</main>
 
         <footer className="border-t border-line py-8 text-sm text-mute">
-          <div className="mx-auto max-w-6xl px-5">
-            Aliança Saqueadores, comunidade de No Man&apos;s Sky. Projeto de fãs,
-            sem vínculo com a Hello Games.
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5">
+            <span>
+              Aliança Saqueadores, comunidade de No Man&apos;s Sky. Projeto de fãs,
+              sem vínculo com a Hello Games.
+            </span>
+            <span className="flex gap-5">
+              <Link href="/regras" className="underline hover:text-foreground">
+                Regras
+              </Link>
+              <Link href="/privacidade" className="underline hover:text-foreground">
+                Privacidade
+              </Link>
+            </span>
           </div>
         </footer>
       </body>
