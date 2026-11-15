@@ -51,7 +51,7 @@ export default function RootLayout({
               <Link href="/#missoes" className="hidden text-mute hover:text-foreground sm:inline">
                 Missões
               </Link>
-              <Link href="/#atlas" className="hidden text-mute hover:text-foreground sm:inline">
+              <Link href="/atlas" className="hidden text-mute hover:text-foreground sm:inline">
                 Atlas
               </Link>
               <Link href="/#entrar" className="hidden text-mute hover:text-foreground sm:inline">
